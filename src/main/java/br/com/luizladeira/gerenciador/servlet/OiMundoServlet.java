@@ -35,7 +35,7 @@ public class OiMundoServlet extends HttpServlet {
 		out.println("<p>Oi teste, esse é o primeiro Servlet!</p>");
 		out.println("</body>");
 		out.println("</html>");
-
+//teste
 		System.out.println("O servlet oiMundoServlet foi chamado perfeitamente"); //mostra no console
 	}
 }
