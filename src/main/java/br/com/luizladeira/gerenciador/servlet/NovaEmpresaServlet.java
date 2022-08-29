@@ -14,11 +14,24 @@ import javax.servlet.http.HttpServletResponse;
 public class NovaEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/*
+	 * doPost somente aceita requisição do tipo post
+	 * doGet somente aceita requisição do tipo get
+	 */
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Cadastrando uma nova empresa");
+	//protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			
+	System.out.println("Cadastrando uma nova empresa");
 		
 		String nomeEmpresa = request.getParameter("nome"); //Pega o parâmetro via get
+		
+		Empresa empresa = new Empresa();
+		empresa.setName(nomeEmpresa);
+			
+		Banco banco = new Banco();
+		banco.save_empresa(empresa);
 		
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
