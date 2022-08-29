@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # gerenciador
 
@@ -14,3 +15,6 @@ Obs: utilizando o tomcat 9
 sudo tar xzvf apache-tomcat-10.0.8.tar.gz
 
 br.com.luizladeira.gerenciador.servlet
+=======
+# gerenciador
+>>>>>>> 90f4be116c3b217fe56d04d05079af0233bcfac9
