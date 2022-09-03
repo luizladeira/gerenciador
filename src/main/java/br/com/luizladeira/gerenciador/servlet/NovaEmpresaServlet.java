@@ -3,6 +3,7 @@ package br.com.luizladeira.gerenciador.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,6 +35,11 @@ public class NovaEmpresaServlet extends HttpServlet {
 		Banco banco = new Banco();
 		banco.save_empresa(empresa);
 		
+		//ENVIAR PARA O JSP A RESPOSTA
+		RequestDispatcher rd = request.getRequestDispatcher("/sucesso-empresa.jsp");
+		rd.forward(request, response);
+		
+		/*
 		PrintWriter out = response.getWriter();
 		out.println("<html>");
 		out.println("<head>");
@@ -43,6 +49,7 @@ public class NovaEmpresaServlet extends HttpServlet {
 		out.println("</body>");
 		out.println("</html>");
 		
+		*/
 		System.out.println("Nome da Empresa: "+nomeEmpresa);
 	}
 
